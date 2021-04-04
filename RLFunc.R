@@ -18,8 +18,8 @@ fxresult <- eval(fxsolved)
 fyresult <- eval(fysolved)
 
 # prints the results
-print(paste('{x1 , f(x1)} = {',x,',',fxresult,'}'))
-print(paste('{x2 , f(x2)} = {',y,',',fyresult,'}'))
+print(paste('{ x1 , f(x1) } = {',x,',',fxresult,'}'))
+print(paste('{ x2 , f(x2) } = {',y,',',fyresult,'}'))
 
 # reads the size for x and y axis
 xysize <- readline(prompt = 'X axis and Y axis size is: ')
