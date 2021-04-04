@@ -18,12 +18,12 @@ A R script that solves linear functions with 2 points.
 
 
 ## Here's a list with all the known "unwanted features"
--[ ] X != x
--[ ] `:` != `/`
--[ ] ex: x = 2 | 3x is `32`, not `3*2`
+- X != x
+- `:` != `/`
+- ex: x = 2 | 3x is `32`, not `3*2`
 
 ## To do:
--[ ] Add legend to plot
--[ ] Auto size plot 
--[ ] Custom x axis and y axis
--[ ] Fix **all** the bugs
+- Add legend to plot
+- Auto size plot 
+- Custom x axis and y axis
+- Fix **all** the bugs
