@@ -53,6 +53,9 @@ segments(x0 = x, y0 = fxresult, x1 = y, y1 = fyresult, col = "red", lwd = 2)
 segments(x0 = flinepos, y0 = 0, x1 = flineneg, y1 = 0, col = "black")
 segments(x0 = 0, y0 = flineneg, x1 = 0, y1 = flinepos, col = "black")
 
-# adds 4 segments (2 per point) that connects the point to ox and oy
+# adds 4 segments (2 per point) that connects the points to ox and oy
 segments(x0 = y, y0 = fyresult, x1 = 0, y1 = fyresult, col ="blue", lty = "dotted", lwd = 2)
 segments(x0 = y, y0 = fyresult, x1 = y, y1 = 0, col ="blue", lty = "dotted", lwd = 2)
+
+segments(x0 = x, y0 = fxresult, x1 = 0, y1 = fxresult, col ="blue", lty = "dotted", lwd = 2)
+segments(x0 = x, y0 = fxresult, x1 = x, y1 = 0, col ="blue", lty = "dotted", lwd = 2)
