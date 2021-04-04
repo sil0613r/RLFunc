@@ -1,5 +1,5 @@
 # RLFunc
-A R script that solves linear functions with 2 points.
+A script made in R that solves linear functions with 2 points.
 
 ## How to use:
 ### Example:
