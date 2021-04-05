@@ -13,5 +13,5 @@ A script made in R that solves linear functions with 2 points.
 
 ## To do:
 - Add legend to plot
-- Auto size plot 
-- Custom x axis and y axis size
+- ~~Auto size plot~~ 
+- ~~Custom x axis and y axis size~~
