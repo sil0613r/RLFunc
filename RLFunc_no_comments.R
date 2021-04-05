@@ -1,3 +1,4 @@
+
 x <- readline(prompt='x1 = ')
 y <- readline(prompt='x2 = ')
 fexpr <- readline(prompt='f(x) = ')
@@ -7,9 +8,19 @@ fxsolved <- parse(text = fxunsolved)
 fysolved <- parse(text = fyunsolved)
 fxresult <- eval(fxsolved)
 fyresult <- eval(fysolved)
-print(paste('{ x1 , f(x1) } = {',x,',',fxresult,'}'))
-print(paste('{ x2 , f(x2) } = {',y,',',fyresult,'}'))
-xysize <- readline(prompt = 'X axis and Y axis size is: ')
+print(paste('{x1 , f(x1)} = {',x,',',fxresult,'}'))
+print(paste('{x2 , f(x2)} = {',y,',',fyresult,'}'))
+xint <- as.integer(x)
+yint <- as.integer(y)
+xysize <- NULL
+seglenghtopt <- readline(prompt = 'Choose X axis and Y axis size (1 auto , 2 custom): ')
+if(seglenghtopt == '1') {
+  xysize <- max(abs(xint),abs(fxresult),abs(yint),abs(fyresult))
+} else if(seglenghtopt == '2'){
+  xysize <- readline(prompt = 'Enter X axis and Y axis size: ')
+} else{
+  print('invalid option')
+}
 xysize = as.integer(xysize)
 xysizeneg <- xysize*-1
 xysizepos <- xysize
