@@ -6,8 +6,8 @@ y <- readline(prompt='x2 = ')
 fexpr <- readline(prompt='f(x) = ')
 
 # replaces the 'x' in the equation with x1 and x2
-fxunsolved <- gsub('x', x, fexpr)
-fyunsolved <- gsub('x', y, fexpr)
+fxunsolved <- gsub('x', x, fexpr, ignore.case = TRUE)
+fyunsolved <- gsub('x', y, fexpr, ignore.case = TRUE)
 
 # converts from string to expression
 fxsolved <- parse(text = fxunsolved)
