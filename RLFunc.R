@@ -18,11 +18,28 @@ fxresult <- eval(fxsolved)
 fyresult <- eval(fysolved)
 
 # prints the results
-print(paste('{ x1 , f(x1) } = {',x,',',fxresult,'}'))
-print(paste('{ x2 , f(x2) } = {',y,',',fyresult,'}'))
+print(paste('{x1 , f(x1)} = {',x,',',fxresult,'}'))
+print(paste('{x2 , f(x2)} = {',y,',',fyresult,'}'))
 
-# reads the size for x and y axis
-xysize <- readline(prompt = 'X axis and Y axis size is: ')
+# converts x and y to int
+xint <- as.integer(x)
+yint <- as.integer(y)
+
+# creates a empty variable
+xysize <- NULL
+
+# choose auto size or custom
+seglenghtopt <- readline(prompt = 'Choose X axis and Y axis size (1 auto , 2 custom): ')
+
+# checks if seglenghtopt is '1' or '2' 
+if(seglenghtopt == '1') {
+  xysize <- max(abs(xint),abs(fxresult),abs(yint),abs(fyresult))
+} else if(seglenghtopt == '2'){
+  xysize <- readline(prompt = 'Enter X axis and Y axis size: ')
+} else{
+  print('invalid option')
+}
+
 
 # converts string to integer
 xysize = as.integer(xysize)
@@ -42,7 +59,6 @@ xysizenegint = as.integer(xysizeneg)
 xysizeposint = as.integer(xysizepos)
 
 # creates plot, adds grid and points
-
 plot(c(x,y,0), c(fxresult,fyresult,0), xlim=c(xysizeneg, xysizepos), ylim=c(xysizeneg, xysizepos), xlab = 'X', ylab = 'Y')
 grid(nx = NULL, ny = NULL, col = "lightgray", lty = "dotted", lwd = par("lwd"), equilogs = TRUE)
 
@@ -53,7 +69,7 @@ segments(x0 = x, y0 = fxresult, x1 = y, y1 = fyresult, col = "red", lwd = 2)
 segments(x0 = flinepos, y0 = 0, x1 = flineneg, y1 = 0, col = "black")
 segments(x0 = 0, y0 = flineneg, x1 = 0, y1 = flinepos, col = "black")
 
-# adds 4 segments (2 per point) that connects the points to ox and oy
+# adds 4 segments (2 per point) that connects the point to ox and oy
 segments(x0 = y, y0 = fyresult, x1 = 0, y1 = fyresult, col ="blue", lty = "dotted", lwd = 2)
 segments(x0 = y, y0 = fyresult, x1 = y, y1 = 0, col ="blue", lty = "dotted", lwd = 2)
 
