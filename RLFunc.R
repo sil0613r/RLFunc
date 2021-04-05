@@ -40,7 +40,6 @@ if(seglenghtopt == '1') {
   print('invalid option')
 }
 
-
 # converts string to integer
 xysize = as.integer(xysize)
 
@@ -49,8 +48,8 @@ xysizeneg <- xysize*-1
 xysizepos <- xysize
 
 # just to be sure that the segments are long enough
-flineneg <- xysizeneg*100000
-flinepos <- xysizepos*100000
+flineneg <- xysizeneg
+flinepos <- xysizepos
 
 # converts some strings to integers
 x = as.integer(x)
@@ -58,9 +57,13 @@ y = as.integer(y)
 xysizenegint = as.integer(xysizeneg)
 xysizeposint = as.integer(xysizepos)
 
-# creates plot, adds grid and points
+# creates plot, adds grid, adds legend and adds points
 plot(c(x,y,0), c(fxresult,fyresult,0), xlim=c(xysizeneg, xysizepos), ylim=c(xysizeneg, xysizepos), xlab = 'X', ylab = 'Y')
+text(x=x, y=fxresult, cex = 1, pos = 3, 'A')
+text(x=y, y=fyresult, cex = 1, pos = 3, 'B')
 grid(nx = NULL, ny = NULL, col = "lightgray", lty = "dotted", lwd = par("lwd"), equilogs = TRUE)
+par(xpd=TRUE)
+legend("topleft", inset=c(0,-0.2), legend=c(paste('A = {',x,',',fxresult,'}'),paste('B = {',y,',',fyresult,'}')))
 
 # creates the segment that  passes through the points
 segments(x0 = x, y0 = fxresult, x1 = y, y1 = fyresult, col = "red", lwd = 2)
